@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Toast;
@@ -36,7 +37,8 @@ public class MainActivity extends AppCompatActivity implements LayTruyenVe {
         setUp();
         setClik();
         new ApiLayTruyen(this).execute();
-
+        Button loginButton = findViewById(R.id.goToLogin);
+        loginButton.setOnClickListener(v -> handleLoginButtonClick());
     }
 
     public void init(){
@@ -65,8 +67,8 @@ public class MainActivity extends AppCompatActivity implements LayTruyenVe {
 
             @Override
             public void afterTextChanged(Editable s) {
-                  String editable = edtTimKiem.getText().toString();
-                  adapter.sortTruyen(editable);
+                String editable = edtTimKiem.getText().toString();
+                adapter.sortTruyen(editable);
 
             }
         });
@@ -90,18 +92,18 @@ public class MainActivity extends AppCompatActivity implements LayTruyenVe {
 
     @Override
     public void ketThuc(String data) {
-          try {
-              truyenTranhArrayList.clear();
-              JSONArray arr = new JSONArray(data);
-              for(int i = 0; i < arr.length(); i++){
-                  JSONObject o = arr.getJSONObject(i);
-                  truyenTranhArrayList.add(new TruyenTranh(o));
-              }
-              adapter = new TruyenTranhAdapter(this, 0, truyenTranhArrayList);
-              gdvDSTruyen.setAdapter(adapter);
-          }catch (JSONException ex){
-              ex.printStackTrace();
-          }
+        try {
+            truyenTranhArrayList.clear();
+            JSONArray arr = new JSONArray(data);
+            for(int i = 0; i < arr.length(); i++){
+                JSONObject o = arr.getJSONObject(i);
+                truyenTranhArrayList.add(new TruyenTranh(o));
+            }
+            adapter = new TruyenTranhAdapter(this, 0, truyenTranhArrayList);
+            gdvDSTruyen.setAdapter(adapter);
+        }catch (JSONException ex){
+            ex.printStackTrace();
+        }
     }
 
     @Override
@@ -111,5 +113,10 @@ public class MainActivity extends AppCompatActivity implements LayTruyenVe {
 
     public void update(View view) {
         new ApiLayTruyen(this).execute();
+    }
+    // Phương thức xử lý sự kiện khi người dùng nhấn nút "Đăng Nhập"
+    private void handleLoginButtonClick() {
+        Intent intent = new Intent(this, activity_login.class);
+        startActivity(intent);
     }
 }

@@ -4,49 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <!-- activity_register.xml -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp"
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="223dp"
+        android:layout_height="48dp"
+        android:text="@string/dang_ky"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:context=".RegisterActivity"
-        tools:layout_editor_absoluteY="114dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Username"
-            android:minHeight="48dp"
-            android:inputType="TODO"
-            tools:ignore="HardcodedText,TextFields,VisualLintTextFieldSize"
-            android:importantForAutofill="no" />
-        <EditText
-            android:id="@+id/editTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/email"
-            android:minHeight="48dp"
-            android:inputType="TODO"
-            android:importantForAutofill="no"
-            tools:ignore="TextFields,VisualLintTextFieldSize" />
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="367dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="@string/invalid_password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.299" />
 
-        <EditText
-            android:id="@+id/editTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="367dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.187" />
 
-        <Button
-            android:id="@+id/buttonRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register" />
-    </LinearLayout>
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="355dp"
+        android:layout_height="57dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.076" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

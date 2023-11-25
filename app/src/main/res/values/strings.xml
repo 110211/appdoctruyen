@@ -54,4 +54,16 @@
     </string>
     <string name="register">Register</string>
     <string name="email">Email</string>
+    <string name="todo">TODO</string>
+    <string name="ng_nh_p">Đăng Nhập</string>
+    <string name="th_ng_tin">Thông Tin</string>
+    <string name="t_truy_n">Tủ Truyện</string>
+    <string name="nh_p_t_n_truy_n_c_n_t_m">Nhập tên truyện cần tìm</string>
+    <string name="dangnhap">DangNhap</string>
+    <string name="login">Login</string>
+    <string name="Email">Email</string>
+    <string name="Register">Register</string>
+    <string name="password">Password</string>
+    <string name="dang_ky">Dang Ky</string>
+    <string name="nhap_mat_khau_ban_muon">Nhap mat khau ban muon</string>
 </resources>

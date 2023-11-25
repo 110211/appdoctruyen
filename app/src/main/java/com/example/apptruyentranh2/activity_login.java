@@ -37,7 +37,9 @@ public class activity_login extends AppCompatActivity {
 
         buttonGoToRegister.setOnClickListener(view -> {
             Intent intent = new Intent(activity_login.this, activity_register.class);
+            intent.putExtra("from-login", true);
             startActivity(intent);
+            finish();
         });
     }
 
@@ -65,9 +67,9 @@ public class activity_login extends AppCompatActivity {
     }
 
     private void handleLoginSuccess() {
-        // Xử lý sau khi đăng nhập thành công, ví dụ: chuyển đến màn hình chính
+        // Xử lý sau khi đăng nhập thành công,  chuyển đến màn hình chính
         Intent intent = new Intent(activity_login.this, MainActivity.class);
-        startActivity(intent);
+       startActivity(intent);
         finish();
     }
 }
